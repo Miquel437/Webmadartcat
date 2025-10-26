@@ -3,224 +3,792 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MadartCat | Instal·lacions d'Aigua, Electricitat i Climatització a Terrassa</title>
-    <meta name="description" content="MadartCat: Empresa d'instal·lacions a Terrassa. Especialistes en reparació de calderes (Ariston, Junkers), aerotèrmia i electricitat. Contacta'ns!">
+    <title>ReformesCat | Reformes Integrals i Instal·lacions per a tota Catalunya</title>
+    <meta name="description" content="ReformesCat: Especialistes en reformes integrals, instal·lacions, climatització i plaques solars. Servim tota Catalunya des de Badalona.">
     <style>
         :root {
-            --primary: #004a8f; /* Blau corporatiu */
-            --secondary: #e63946; /* Vermell per destacar */
+            --primary: #2c5530; /* Verd natural per reformes */
+            --secondary: #d4af37; /* Or per destacar */
+            --accent: #004a8f; /* Blau per instal·lacions */
+            --light: #f8f9fa;
+            --dark: #343a40;
         }
-        body {
-            font-family: 'Roboto', Arial, sans-serif;
-            line-height: 1.6;
+        
+        * {
             margin: 0;
-            color: #333;
+            padding: 0;
+            box-sizing: border-box;
         }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+        
+        /* Header i Navegació */
         header {
             background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
             padding: 1rem 0;
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
         }
+        
         .container {
-            width: 85%;
-            margin: auto;
-            overflow: hidden;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
         }
-        #logo { 
-            font-weight: bold; 
-            color: var(--primary);
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        #logo h1 { 
-            margin: 0;
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo h1 {
             font-size: 1.8rem;
-        }
-        #logo p {
+            color: var(--primary);
             margin: 0;
-            font-size: 1rem;
-            color: var(--primary);
         }
-        nav ul { display: flex; list-style: none; padding: 0; }
-        nav li { padding: 0 1rem; }
-        nav a { 
-            text-decoration: none; 
-            color: var(--primary);
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .logo p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--dark);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav li {
+            margin-left: 1.5rem;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
             font-weight: 500;
-            transition: 0.3s;
+            transition: color 0.3s;
+            position: relative;
         }
-        nav a:hover { color: var(--secondary); }
+        
+        nav a:hover {
+            color: var(--primary);
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s;
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1605152276897-4f618f831968?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80') no-repeat center/cover;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') no-repeat center/cover;
             color: white;
             text-align: center;
-            padding: 6rem 0;
+            padding: 8rem 0;
         }
+        
+        .hero h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
         .btn {
             display: inline-block;
             background: var(--secondary);
             color: white;
-            padding: 0.8rem 2rem;
+            padding: 0.9rem 2.2rem;
             border: none;
             border-radius: 5px;
             text-decoration: none;
-            margin-top: 1rem;
             font-weight: bold;
-            transition: 0.3s;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            cursor: pointer;
         }
-        .btn:hover { background: #c1121f; }
-        .services { padding: 4rem 0; }
-        .service-box {
-            border: 1px solid #eee;
-            padding: 2rem;
-            margin: 1rem;
-            border-radius: 8px;
+        
+        .btn:hover {
+            background: #b8941f;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+        }
+        
+        .btn-primary:hover {
+            background: #1e3a23;
+        }
+        
+        /* Serveis Section */
+        .section-title {
             text-align: center;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            transition: 0.3s;
+            margin-bottom: 3rem;
+            position: relative;
         }
-        .service-box:hover { transform: translateY(-5px); }
-        .brands {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1.5rem;
-            padding: 2rem 0;
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            display: inline-block;
+            margin-bottom: 1rem;
         }
-        .brands img { height: 50px; filter: grayscale(100%); opacity: 0.7; transition: 0.3s; }
-        .brands img:hover { filter: grayscale(0); opacity: 1; }
-        footer {
-            background: #222;
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary);
         }
-        .contact-grid {
+        
+        .services {
+            padding: 5rem 0;
+            background-color: var(--light);
+        }
+        
+        .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-top: 2rem;
         }
-        .map-container {
-            height: 300px;
-            margin-top: 2rem;
-            background: #eee;
+        
+        .service-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-icon {
+            height: 120px;
+            background-color: var(--primary);
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 8px;
+            color: white;
+            font-size: 2.5rem;
+        }
+        
+        .service-content {
+            padding: 1.5rem;
+        }
+        
+        .service-content h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+        
+        .service-content ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .service-content li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .service-content li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+        }
+        
+        /* Zona de Servei */
+        .coverage {
+            padding: 5rem 0;
+            text-align: center;
+            background: linear-gradient(rgba(44, 85, 48, 0.9), rgba(44, 85, 48, 0.9)), url('https://images.unsplash.com/photo-1583324113626-70df0f4deaab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') no-repeat center/cover;
+            color: white;
+        }
+        
+        .coverage h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .coverage p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        .cities {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .city {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.7rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 500;
+        }
+        
+        /* Procés de Treball */
+        .process {
+            padding: 5rem 0;
+            background-color: white;
+        }
+        
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+        
+        .step {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            padding: 0 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+        }
+        
+        /* Contacte */
+        .contact {
+            padding: 5rem 0;
+            background-color: var(--light);
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+        
+        .contact-info h3, .contact-form h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-icon {
+            background: var(--primary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border 0.3s;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 0 1.5rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-logo h3 {
+            color: white;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-logo span {
+            color: var(--secondary);
+        }
+        
+        .footer-links h4, .footer-services h4 {
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-links ul, .footer-services ul {
+            list-style: none;
+        }
+        
+        .footer-links li, .footer-services li {
+            margin-bottom: 0.7rem;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .footer-services li {
+            color: #ccc;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid #444;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                justify-content: center;
+            }
+            
+            nav li {
+                margin: 0 0.7rem;
+            }
+            
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .process-steps {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Capçalera -->
     <header>
-        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
-            <div id="logo">
-                <h1>MADART<span style="color: var(--secondary);">CAT</span></h1>
-                <p>instal·lacions.cat</p>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>Reformes<span>Cat</span></h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#inici">Inici</a></li>
+                        <li><a href="#serveis">Serveis</a></li>
+                        <li><a href="#cobertura">Cobertura</a></li>
+                        <li><a href="#proces">Procés</a></li>
+                        <li><a href="#contacte">Contacte</a></li>
+                    </ul>
+                </nav>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="#inici">Inici</a></li>
-                    <li><a href="#serveis">Serveis</a></li>
-                    <li><a href="#marcas">Marcas</a></li>
-                    <li><a href="#contacte">Contacte</a></li>
-                </ul>
-            </nav>
         </div>
     </header>
 
+    <!-- Secció Hero -->
     <section id="inici" class="hero">
         <div class="container">
-            <h2 style="font-size: 2.5rem;">Instal·lacions professionals a Terrassa</h2>
-            <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto;">
-                Especialistes en reparació de calderes de gas, aerotèrmia i instal·lacions elèctriques. 
-                <strong>Servei fiable i garantit.</strong>
-            </p>
-            <a href="#contacte" class="btn">Demana pressupost</a>
+            <h2>Reformes Integrals per a tota Catalunya</h2>
+            <p>Especialistes en reformes, instal·lacions, climatització i energia solar. Qualitat, garantia i professionalitat per a la teva llar o negoci.</p>
+            <a href="#contacte" class="btn">Demana Pressupost Sense Compromís</a>
         </div>
     </section>
 
+    <!-- Secció Serveis -->
     <section id="serveis" class="services">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 3rem; font-size: 2rem;">Els Nostres Serveis</h2>
-            <div style="display: flex; flex-wrap: wrap; justify-content: center;">
-                <div class="service-box">
-                    <h3>🔥 Reparació de Calderes</h3>
-                    <p>Especialistes en marques com <strong>Ariston, Junkers i Saunier Duval</strong>. Manteniments periòdics i reparacions amb garantia.</p>
+            <div class="section-title">
+                <h2>Els Nostres Serveis</h2>
+                <p>Ofereim solucions completes per a la teva llar o empresa</p>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Reformes -->
+                <div class="service-card">
+                    <div class="service-icon">🏗️</div>
+                    <div class="service-content">
+                        <h3>Reformes Integrals</h3>
+                        <ul>
+                            <li>Reformes d'habitatges i locals</li>
+                            <li>Enrajolats i paviments</li>
+                            <li>Pladur i guixos</li>
+                            <li>Pintura interior i exterior</li>
+                            <li>Reformes de banys i cuines</li>
+                            <li>Rehabilitació d'edificis</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="service-box">
-                    <h3>⚡ Electricitat</h3>
-                    <p>Instal·lacions segures, panells solars i correcció d'averies amb materials de primera qualitat.</p>
+                
+                <!-- Instal·lacions -->
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <div class="service-content">
+                        <h3>Instal·lacions</h3>
+                        <ul>
+                            <li>Instal·lacions d'aigua</li>
+                            <li>Instal·lacions de gas</li>
+                            <li>Electricitat i il·luminació</li>
+                            <li>Calefacció i aigua calenta</li>
+                            <li>Reparació de calderes</li>
+                            <li>Instal·lacions de seguretat</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="service-box">
-                    <h3>🌡️ Climatització</h3>
-                    <p>Aerotèrmia, aire condicionat (splits i conductes) i terra radiant. Eficiència energètica garantida.</p>
+                
+                <!-- Climatització -->
+                <div class="service-card">
+                    <div class="service-icon">❄️</div>
+                    <div class="service-content">
+                        <h3>Climatització</h3>
+                        <ul>
+                            <li>Aire condicionat (splits, conductes)</li>
+                            <li>Aerotèrmia</li>
+                            <li>Bombes de calor</li>
+                            <li>Ventilació i extracció</li>
+                            <li>Manteniment de sistemes</li>
+                            <li>Reparacions urgents</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Energia Solar -->
+                <div class="service-card">
+                    <div class="service-icon">☀️</div>
+                    <div class="service-content">
+                        <h3>Energia Solar</h3>
+                        <ul>
+                            <li>Plaques solars fotovoltaiques</li>
+                            <li>Autoconsum elèctric</li>
+                            <li>Instal·lacions aïllades</li>
+                            <li>Subvencions i ajudes</li>
+                            <li>Estalvi energètic</li>
+                            <li>Manteniment d'instal·lacions</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="marcas" style="background: #f9f9f9; padding: 3rem 0;">
+    <!-- Zona de Cobertura -->
+    <section id="cobertura" class="coverage">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 2rem;">Treballam amb les millors marques</h2>
-            <div class="brands">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Ariston_logo.svg/1200px-Ariston_logo.svg.png" alt="Ariston" title="Ariston">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Junkers_Logo.svg/1200px-Junkers_Logo.svg.png" alt="Junkers" title="Junkers">
-                <img src="https://www.saunierduval.es/etc/designs/sd/img/logo.png" alt="Saunier Duval" title="Saunier Duval">
-                <img src="https://www.mitsubishi-electric.es/content/dam/mitsubishi-electric-es/img/logo.png" alt="Mitsubishi Electric" title="Mitsubishi Electric">
+            <h2>Servim tota Catalunya</h2>
+            <p>Des de la nostra seu central a Badalona, ens desplacem per realitzar treballs a tot el territori català</p>
+            
+            <div class="cities">
+                <div class="city">Badalona</div>
+                <div class="city">Barcelona</div>
+                <div class="city">Mataró</div>
+                <div class="city">Sabadell</div>
+                <div class="city">Terrassa</div>
+                <div class="city">L'Hospitalet</div>
+                <div class="city">Girona</div>
+                <div class="city">Tarragona</div>
+                <div class="city">Lleida</div>
+                <div class="city">Viladecans</div>
+                <div class="city">Castelldefels</div>
+                <div class="city">Vic</div>
+                <div class="city">Manresa</div>
+                <div class="city">Reus</div>
+                <div class="city">Figueres</div>
+            </div>
+            
+            <a href="#contacte" class="btn btn-primary" style="margin-top: 2.5rem;">Consulta la teva zona</a>
+        </div>
+    </section>
+
+    <!-- Procés de Treball -->
+    <section id="proces" class="process">
+        <div class="container">
+            <div class="section-title">
+                <h2>Com Treballam</h2>
+                <p>Un procés clar i transparent per a la teva tranquil·litat</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Assessoria</h3>
+                    <p>Estudiem les teves necessitats i et proporcionem assessorament expert</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Pressupost</h3>
+                    <p>Elaboram un pressupost detallat i sense compromís</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Pla de Treball</h3>
+                    <p>Definim un calendari i metodologia d'execució</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Execució</h3>
+                    <p>Realitzam el treball amb màxima qualitat i eficiència</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <h3>Lliurament</h3>
+                    <p>Et lliuram el projecte finalitzat amb totes les garanties</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="contacte" style="padding: 4rem 0;">
+    <!-- Contacte -->
+    <section id="contacte" class="contact">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 2rem;">Contacte</h2>
+            <div class="section-title">
+                <h2>Contacte</h2>
+                <p>Estam a la teva disposició per a qualsevol consulta</p>
+            </div>
+            
             <div class="contact-grid">
-                <div>
-                    <h3>📌 On som?</h3>
-                    <p><strong>Madart Instal·lacions</strong><br>
-                    C/ Example, 123<br>
-                    08221 Terrassa</p>
-                    <p>📞 <a href="tel:937XXXXXX" style="color: var(--primary);">937 XXX XXX</a></p>
-                    <p>✉️ <a href="mailto:info@madartcat.com" style="color: var(--primary);">info@madartcat.com</a></p>
+                <div class="contact-info">
+                    <h3>Informació de Contacte</h3>
                     
-                    <h3 style="margin-top: 2rem;">🕒 Horari</h3>
-                    <p>Dilluns a Divendres: 9:00 - 18:00<br>
-                    Dissabte: 9:00 - 13:00</p>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <h4>Ubicació</h4>
+                            <p>C/ de l'Empresa, 123<br>08911 Badalona, Barcelona</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <h4>Telèfon</h4>
+                            <p><a href="tel:934123456" style="color: var(--primary); text-decoration: none;">93 412 34 56</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:info@reformescat.com" style="color: var(--primary); text-decoration: none;">info@reformescat.com</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">🕒</div>
+                        <div>
+                            <h4>Horari</h4>
+                            <p>Dilluns a Divendres: 8:00 - 18:00<br>Dissabte: 9:00 - 13:00</p>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <h3>✉️ Demana pressupost</h3>
-                    <form>
-                        <input type="text" placeholder="Nom" style="width: 100%; padding: 0.7rem; margin: 0.5rem 0; border: 1px solid #ddd; border-radius: 4px;">
-                        <input type="tel" placeholder="Telèfon" style="width: 100%; padding: 0.7rem; margin: 0.5rem 0; border: 1px solid #ddd; border-radius: 4px;">
-                        <input type="email" placeholder="Email" style="width: 100%; padding: 0.7rem; margin: 0.5rem 0; border: 1px solid #ddd; border-radius: 4px;">
-                        <select style="width: 100%; padding: 0.7rem; margin: 0.5rem 0; border: 1px solid #ddd; border-radius: 4px;">
-                            <option>Servei d'interès</option>
-                            <option>Reparació de calderes</option>
-                            <option>Instal·lació aire condicionat</option>
-                            <option>Electricitat</option>
-                            <option>Altres</option>
-                        </select>
-                        <textarea placeholder="Descripció del servei necessari" style="width: 100%; padding: 0.7rem; margin: 0.5rem 0; border: 1px solid #ddd; border-radius: 4px; height: 100px;"></textarea>
-                        <button type="submit" class="btn">Enviar sol·licitud</button>
+                
+                <div class="contact-form">
+                    <h3>Demana el teu Pressupost</h3>
+                    <form id="budgetForm">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Nom i Cognoms" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="tel" class="form-control" placeholder="Telèfon" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Població" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <select class="form-control" required>
+                                <option value="">Tipus de servei</option>
+                                <option value="reforma">Reforma integral</option>
+                                <option value="enrajolat">Enrajolat i paviments</option>
+                                <option value="pladur">Pladur i guixos</option>
+                                <option value="pintura">Pintura</option>
+                                <option value="aigua">Instal·lació d'aigua</option>
+                                <option value="electricitat">Electricitat</option>
+                                <option value="gas">Instal·lació de gas</option>
+                                <option value="climatitzacio">Climatització</option>
+                                <option value="solar">Plaques solars</option>
+                                <option value="altres">Altres serveis</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Descripció del projecte o servei necessari" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Enviar Sol·licitud</button>
                     </form>
                 </div>
             </div>
-            <div class="map-container">
-                [Inserteu aquí un mapa de Google Maps amb la vostra ubicació]
-            </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
-            <p>© 2023 <strong>madartcat.com</strong> | Tots els drets reservats</p>
-            <p style="margin-top: 0.5rem; font-size: 0.9rem;">
-                Instal·ladors autoritzats a Terrassa · NIF: XXXXXXX
-            </p>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Reformes<span>Cat</span></h3>
+                    <p>Reformes integrals i instal·lacions per a tota Catalunya</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Enllaços Ràpids</h4>
+                    <ul>
+                        <li><a href="#inici">Inici</a></li>
+                        <li><a href="#serveis">Serveis</a></li>
+                        <li><a href="#cobertura">Cobertura</a></li>
+                        <li><a href="#proces">Procés</a></li>
+                        <li><a href="#contacte">Contacte</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-services">
+                    <h4>Els Nostres Serveis</h4>
+                    <ul>
+                        <li>Reformes integrals</li>
+                        <li>Enrajolats i paviments</li>
+                        <li>Pladur i guixos</li>
+                        <li>Pintura</li>
+                        <li>Instal·lacions</li>
+                        <li>Climatització</li>
+                        <li>Plaques solars</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 ReformesCat - Tots els drets reservats | Empresa d'instal·lacions i reformes amb seu a Badalona</p>
+            </div>
         </div>
     </footer>
+
+    <script>
+        // Script per a la navegació suau
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Script per al formulari
+        document.getElementById('budgetForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Gràcies per la teva sol·licitud. Aviat et contactarem per proporcionar-te un pressupost sense compromís.');
+            this.reset();
+        });
+    </script>
 </body>
 </html>

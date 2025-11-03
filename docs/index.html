@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MadartCat | Reformes Integrals i Instal·lacions per a tota Catalunya</title>
-    <meta name="description" content="MadartCat: Especialistes en reformes integrals, instal·lacions, climatització i plaques solars. Servim tota Catalunya des de Badalona.">
+    <meta name="description" content="MadartCat: Especialistes en reformes integrals, instal·lacions, climatització i plaques solars. Servim tota Catalunya des de Cerdanyola del Vallès.">
     <style>
+        /* [El CSS es manté idèntic al que ja heu modificat.] */
         :root {
             --primary: #2c5530; /* Verd natural per reformes */
             --secondary: #d4af37; /* Or per destacar */
@@ -461,7 +462,6 @@
     </style>
 </head>
 <body>
-    <!-- Capçalera -->
     <header>
         <div class="container">
             <div class="header-content">
@@ -482,7 +482,6 @@
         </div>
     </header>
 
-    <!-- Secció Hero -->
     <section id="inici" class="hero">
         <div class="container">
             <h2>Reformes Integrals per a tota Catalunya</h2>
@@ -491,7 +490,6 @@
         </div>
     </section>
 
-    <!-- Secció Serveis -->
     <section id="serveis" class="services">
         <div class="container">
             <div class="section-title">
@@ -500,7 +498,6 @@
             </div>
             
             <div class="services-grid">
-                <!-- Reformes -->
                 <div class="service-card">
                     <div class="service-icon">🏗️</div>
                     <div class="service-content">
@@ -516,7 +513,6 @@
                     </div>
                 </div>
                 
-                <!-- Instal·lacions -->
                 <div class="service-card">
                     <div class="service-icon">🔧</div>
                     <div class="service-content">
@@ -528,11 +524,11 @@
                             <li>Calefacció i aigua calenta</li>
                             <li>Reparació de calderes</li>
                             <li>Instal·lacions de seguretat</li>
+                            <li>Reparacions urgents</li>
                         </ul>
                     </div>
                 </div>
                 
-                <!-- Climatització -->
                 <div class="service-card">
                     <div class="service-icon">❄️</div>
                     <div class="service-content">
@@ -548,7 +544,6 @@
                     </div>
                 </div>
                 
-                <!-- Energia Solar -->
                 <div class="service-card">
                     <div class="service-icon">☀️</div>
                     <div class="service-content">
@@ -567,11 +562,10 @@
         </div>
     </section>
 
-    <!-- Zona de Cobertura -->
     <section id="cobertura" class="coverage">
         <div class="container">
             <h2>Servim tota Catalunya</h2>
-            <p>Des de la nostra seu central a Badalona, ens desplacem per realitzar treballs a tot el territori català</p>
+            <p>Des de la nostra seu central a Cerdanyola del Vallès, ens desplacem per realitzar treballs a tot el territori català</p>
             
             <div class="cities">
                 <div class="city">Badalona</div>
@@ -595,7 +589,6 @@
         </div>
     </section>
 
-    <!-- Procés de Treball -->
     <section id="proces" class="process">
         <div class="container">
             <div class="section-title">
@@ -637,7 +630,6 @@
         </div>
     </section>
 
-    <!-- Contacte -->
     <section id="contacte" class="contact">
         <div class="container">
             <div class="section-title">
@@ -653,7 +645,7 @@
                         <div class="contact-icon">📍</div>
                         <div>
                             <h4>Ubicació</h4>
-                            <p>C/ de l'Empresa, 123<br>08911 Badalona, Barcelona</p>
+                            <p>C/ Nord, 1<br>08290 Cerdanyola del Vllés</p>
                         </div>
                     </div>
                     
@@ -661,7 +653,7 @@
                         <div class="contact-icon">📞</div>
                         <div>
                             <h4>Telèfon</h4>
-                            <p><a href="tel:934123456" style="color: var(--primary); text-decoration: none;">93 412 34 56</a></p>
+                            <p><a href="tel:682279227" style="color: var(--primary); text-decoration: none;">682 279 227</a></p>
                         </div>
                     </div>
                     
@@ -672,37 +664,30 @@
                             <p><a href="mailto:info@madartcat.com" style="color: var(--primary); text-decoration: none;">info@madartcat.com</a></p>
                         </div>
                     </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">🕒</div>
-                        <div>
-                            <h4>Horari</h4>
-                            <p>Dilluns a Divendres: 8:00 - 18:00<br>Dissabte: 9:00 - 13:00</p>
-                        </div>
-                    </div>
                 </div>
                 
                 <div class="contact-form">
                     <h3>Demana el teu Pressupost</h3>
                     <form id="budgetForm">
+                        
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Nom i Cognoms" required>
+                            <input type="text" class="form-control" name="nom" placeholder="Nom i Cognoms" required>
                         </div>
                         
                         <div class="form-group">
-                            <input type="tel" class="form-control" placeholder="Telèfon" required>
+                            <input type="tel" class="form-control" name="telefon" placeholder="Telèfon" required>
                         </div>
                         
                         <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Email" required>
+                            <input type="email" class="form-control" name="email" placeholder="Email" required>
                         </div>
                         
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Població" required>
+                            <input type="text" class="form-control" name="poblacio" placeholder="Població" required>
                         </div>
                         
                         <div class="form-group">
-                            <select class="form-control" required>
+                            <select class="form-control" name="servei" required>
                                 <option value="">Tipus de servei</option>
                                 <option value="reforma">Reforma integral</option>
                                 <option value="enrajolat">Enrajolat i paviments</option>
@@ -718,17 +703,18 @@
                         </div>
                         
                         <div class="form-group">
-                            <textarea class="form-control" placeholder="Descripció del projecte o servei necessari" required></textarea>
+                            <textarea class="form-control" name="missatge" placeholder="Descripció del projecte o servei necessari" required></textarea>
                         </div>
                         
                         <button type="submit" class="btn">Enviar Sol·licitud</button>
                     </form>
+                    
+                    <p id="formStatus" style="margin-top: 15px; font-weight: bold;"></p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -763,7 +749,7 @@
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 MadartCat - Tots els drets reservats | Empresa d'instal·lacions i reformes amb seu a Badalona</p>
+                <p>&copy; 2023 MadartCat - Tots els drets reservats | Empresa d'instal·lacions i reformes amb seu a Cerdanyola del Vllés</p>
             </div>
         </div>
     </footer>
@@ -784,11 +770,58 @@
             });
         });
         
-        // Script per al formulari
-        document.getElementById('budgetForm').addEventListener('submit', function(e) {
+        // ** NOU SCRIPT PER ENVIAMENT A ENDPOINT (Opció Avançada) **
+        document.getElementById('budgetForm').addEventListener('submit', async function(e) {
             e.preventDefault();
-            alert('Gràcies per la teva sol·licitud. Aviat et contactarem per proporcionar-te un pressupost sense compromís.');
-            this.reset();
+            
+            const form = e.target;
+            const statusMessage = document.getElementById('formStatus');
+            const submitButton = form.querySelector('.btn');
+            
+            statusMessage.style.color = 'gray';
+            statusMessage.textContent = 'Enviant sol·licitud...';
+            submitButton.disabled = true;
+
+            const formData = new FormData(form);
+            const data = {};
+            // Converteix FormData a un objecte JSON
+            for (let [key, value] of formData.entries()) {
+                data[key] = value;
+            }
+            // Afegeix el timestamp de l'enviament
+            data['data_sollicitud'] = new Date().toISOString();
+
+            // L'ENDPOINT ON HAURIES DE CONFIGURAR LA FUNCIÓ DE SERVIDOR/GITHUB ACTION
+            const ENDPOINT_URL = 'https://api.vostredomini.com/submit-to-github'; 
+            
+            try {
+                // Utilitzem un endpoint que haurà d'existir i que estarà configurat 
+                // per rebre aquest JSON i activar el teu GitHub Action.
+                const response = await fetch(ENDPOINT_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                });
+
+                if (response.ok) {
+                    statusMessage.style.color = 'var(--primary)';
+                    statusMessage.textContent = '✅ Sol·licitud enviada correctament! Aviat et contactarem.';
+                    form.reset();
+                } else {
+                    // Si el servidor (el teu endpoint) retorna un error
+                    statusMessage.style.color = 'red';
+                    statusMessage.textContent = '❌ Error en l\'enviament. Si us plau, prova-ho més tard o truca\'ns.';
+                }
+            } catch (error) {
+                // Error de xarxa o de connexió a l'endpoint
+                console.error('Error:', error);
+                statusMessage.style.color = 'red';
+                statusMessage.textContent = '❌ Error de connexió. Comprova la teva connexió i torna a intentar-ho.';
+            } finally {
+                submitButton.disabled = false;
+            }
         });
     </script>
 </body>

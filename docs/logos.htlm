@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecciona el teu logotip - MADARTCAT</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: #2c3e50;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.8;
+        }
+        
+        .back-button {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        
+        .back-button:hover {
+            background: #2980b9;
+        }
+        
+        .category {
+            padding: 40px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        
+        .category:last-child {
+            border-bottom: none;
+        }
+        
+        .category-title {
+            font-size: 2em;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            text-align: center;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        .logos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .logo-item {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #e9ecef;
+        }
+        
+        .logo-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .logo-name {
+            font-size: 1.2em;
+            color: #495057;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        
+        /* Estils pels logotips moderns */
+        .logo-modern-1 .logo-main {
+            font-size: 3em;
+            font-weight: 800;
+            letter-spacing: -2px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        
+        .logo-modern-1 .logo-sub {
+            font-size: 1em;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        
+        .logo-modern-2 .logo-container {
+            display: inline-block;
+        }
+        
+        .logo-modern-2 .art-tools {
+            width: 60px;
+            height: 60px;
+            background: #333;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            color: white;
+            font-size: 1.5em;
+        }
+        
+        .logo-modern-2 .logo-name {
+            font-size: 2em;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .logo-modern-2 .logo-tagline {
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        /* Estils pels logotips artístics */
+        .logo-artistic-1 {
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+            padding: 30px 20px;
+            border-radius: 10px;
+        }
+        
+        .logo-artistic-1 .brush-stroke {
+            font-size: 3.5em;
+            font-weight: bold;
+            font-family: 'Brush Script MT', cursive;
+            color: #333;
+            text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+            transform: rotate(-2deg);
+        }
+        
+        .logo-artistic-1 .art-sub {
+            font-size: 1.1em;
+            color: #555;
+            font-style: italic;
+            margin-top: 10px;
+        }
+        
+        .logo-artistic-2 .rainbow-text {
+            font-size: 3em;
+            font-weight: 900;
+            background: linear-gradient(90deg, #ff6b6b, #ffa726, #ffee58, #66bb6a, #42a5f5, #5c6bc0, #ab47bc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        
+        .logo-artistic-2 .creative-tag {
+            font-size: 1em;
+            color: #777;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        /* Estils pels logotips professionals */
+        .logo-professional-1 .pro-logo {
+            font-size: 2.5em;
+            font-weight: 300;
+            color: #2c3e50;
+            letter-spacing: 1px;
+        }
+        
+        .logo-professional-1 .pro-tagline {
+            font-size: 1em;
+            color: #7f8c8d;
+            margin-top: 15px;
+            border-top: 1px solid #ecf0f1;
+            padding-top: 15px;
+        }
+        
+        .logo-professional-2 .corp-container {
+            display: inline-block;
+            border: 2px solid #34495e;
+            padding: 20px 30px;
+        }
+        
+        .logo-professional-2 .corp-name {
+            font-size: 2.2em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .logo-professional-2 .corp-dot {
+            color: #e74c3c;
+        }
+        
+        .logo-professional-2 .corp-desc {
+            font-size: 0.9em;
+            color: #95a5a6;
+            margin-top: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .selection-message {
+            text-align: center;
+            padding: 20px;
+            background: #e8f5e8;
+            color: #2d5016;
+            font-weight: bold;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #34495e;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎨 Tria el teu Logotip</h1>
+            <p>6 dissenys exclusius per a MADARTCAT</p>
+            <a href="index.html" class="back-button">← Tornar a la Pàgina Principal</a>
+        </div>
+
+        <!-- CATEGORIA 1: MODERN I MINIMALISTA -->
+        <div class="category">
+            <h2 class="category-title">🔄 Modern & Minimalista</h2>
+            <div class="logos-grid">
+                <div class="logo-item logo-modern-1">
+                    <div class="logo-name">Geomètric</div>
+                    <div class="logo-main">MADART</div>
+                    <div class="logo-sub">CATALUNYA</div>
+                </div>
+                
+                <div class="logo-item logo-modern-2">
+                    <div class="logo-name">Eines d'Art</div>
+                    <div class="logo-container">
+                        <div class="art-tools">🎨</div>
+                        <div class="logo-name">madartcat</div>
+                        <div class="logo-tagline">art & design studio</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CATEGORIA 2: ARTÍSTIC I CREATIU -->
+        <div class="category">
+            <h2 class="category-title">✨ Artístic & Creatiu</h2>
+            <div class="logos-grid">
+                <div class="logo-item logo-artistic-1">
+                    <div class="logo-name">Pinzellades</div>
+                    <div class="brush-stroke">MadArt</div>
+                    <div class="art-sub">on la creativitat pren vida</div>
+                </div>
+                
+                <div class="logo-item logo-artistic-2">
+                    <div class="logo-name">Colors Vibrants</div>
+                    <div class="rainbow-text">MADARTCAT</div>
+                    <div class="creative-tag">expressió visual</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CATEGORIA 3: PROFESSIONAL I NET -->
+        <div class="category">
+            <h2 class="category-title">💼 Professional & Net</h2>
+            <div class="logos-grid">
+                <div class="logo-item logo-professional-1">
+                    <div class="logo-name">Elegant</div>
+                    <div class="pro-logo">MADART CAT</div>
+                    <div class="pro-tagline">Disseny Gràfic & Il·lustració</div>
+                </div>
+                
+                <div class="logo-item logo-professional-2">
+                    <div class="logo-name">Corporatiu</div>
+                    <div class="corp-container">
+                        <div class="corp-name">MADART<span class="corp-dot">.</span>CAT</div>
+                        <div class="corp-desc">Studio Creatiu</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="selection-message">
+            💡 Fes clic sobre els logotips per veure'ls millor. Tria el que més t'agradi!
+        </div>
+
+        <div class="footer">
+            <p>madartcat.com &copy; 2025 - Tots els drets reservats</p>
+        </div>
+    </div>
+
+    <script>
+        // Efecte interactiu quan passes el ratolí
+        document.querySelectorAll('.logo-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const logoName = this.querySelector('.logo-name').textContent;
+                alert(`Has seleccionat: ${logoName}\n\nPerfecte! Ara puc crear-te la versió final d'aquest disseny.`);
+            });
+        });
+    </script>
+</body>
+</html>

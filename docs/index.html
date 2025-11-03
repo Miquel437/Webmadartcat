@@ -653,7 +653,7 @@
                         <div class="contact-icon">📞</div>
                         <div>
                             <h4>Telèfon</h4>
-                            <p><a href="tel:698279227" style="color: var(--primary); text-decoration: none;">698 279 227</a></p>
+                            <p><a href="tel:698279227" style="color: var(--primary); text-decoration: none;">**698 279 227**</a></p> 
                         </div>
                     </div>
                     
@@ -792,11 +792,10 @@
             data['data_sollicitud'] = new Date().toISOString();
 
             // L'ENDPOINT ON HAURIES DE CONFIGURAR LA FUNCIÓ DE SERVIDOR/GITHUB ACTION
+            // Mantinc aquesta URL com a exemple. Recorda canviar-la pel teu endpoint real.
             const ENDPOINT_URL = 'https://api.vostredomini.com/submit-to-github'; 
             
             try {
-                // Utilitzem un endpoint que haurà d'existir i que estarà configurat 
-                // per rebre aquest JSON i activar el teu GitHub Action.
                 const response = await fetch(ENDPOINT_URL, {
                     method: 'POST',
                     headers: {
@@ -810,12 +809,10 @@
                     statusMessage.textContent = '✅ Sol·licitud enviada correctament! Aviat et contactarem.';
                     form.reset();
                 } else {
-                    // Si el servidor (el teu endpoint) retorna un error
                     statusMessage.style.color = 'red';
                     statusMessage.textContent = '❌ Error en l\'enviament. Si us plau, prova-ho més tard o truca\'ns.';
                 }
             } catch (error) {
-                // Error de xarxa o de connexió a l'endpoint
                 console.error('Error:', error);
                 statusMessage.style.color = 'red';
                 statusMessage.textContent = '❌ Error de connexió. Comprova la teva connexió i torna a intentar-ho.';
